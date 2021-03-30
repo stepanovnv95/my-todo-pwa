@@ -4,7 +4,8 @@ interface TaskListProps {
   tasks: string[];
 }
 
-class TaskList extends React.PureComponent<TaskListProps> {
+class TaskList extends React.PureComponent<TaskListProps> 
+{
   render() {
     return (
       <>
