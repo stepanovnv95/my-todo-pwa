@@ -1,11 +1,11 @@
 import React from 'react'
-import TaskListModel from 'model/TaskList';
+import TaskListModel from 'model/TaskListModel';
 
 interface TaskListProps {
   model: TaskListModel;
 }
 
-class TaskList extends React.PureComponent<TaskListProps> 
+class TaskListView extends React.PureComponent<TaskListProps> 
 {
   render() {
     return <>{ this.isEmpty() ? this.renderEmpty() : this.renderList() }</>;
@@ -28,4 +28,4 @@ class TaskList extends React.PureComponent<TaskListProps>
   }
 }
 
-export default TaskList;
+export default TaskListView;
