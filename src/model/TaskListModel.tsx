@@ -1,10 +1,12 @@
 import { makeObservable, observable } from 'mobx';
 
-class TaskList 
+class TaskList
 {
-  tasks: string[] = ['Tasks', 'from', 'mobx'];
+  tasks: string[];
 
-  constructor() {
+  constructor(tasks: string[]) {
+    this.tasks = tasks;
+    
     makeObservable(this, {
       tasks: observable
     });
