@@ -8,26 +8,23 @@ interface TaskListProps {
 class TaskList extends React.PureComponent<TaskListProps> 
 {
   render() {
+    return <>{ this.isEmpty() ? this.renderEmpty() : this.renderList() }</>;
+  }
+
+  renderEmpty(): JSX.Element {
+    return <p>Empty</p>;
+  }
+
+  renderList(): JSX.Element {
     return (
-      <>
-        {this.body()}
-      </>
+      <ul>
+        { this.props.model.tasks.map(t => <li>{ t }</li>) }
+      </ul>
     );
   }
 
-  body(): JSX.Element {
-    if (this.props.model.tasks.length > 0) {
-      return <ul>{this.list()}</ul>;
-    } else {
-      return <p>Empty</p>;
-    }
-  }
-  
-  list(): JSX.Element[] {
-    const l = this.props.model.tasks.map((t): JSX.Element => {
-      return <li>{t}</li>;
-    });
-    return l;
+  isEmpty(): boolean {
+    return this.props.model.tasks.length === 0;
   }
 }
 
