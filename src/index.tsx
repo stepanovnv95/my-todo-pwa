@@ -1,5 +1,6 @@
 import renderRoot from './view/index'
 import reportWebVitals from './reportWebVitals';
+import './model/index';
 
 renderRoot();
 

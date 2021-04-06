@@ -1,12 +1,15 @@
 import React from 'react';
-import TaskList from './TaskList'
 
-class App extends React.PureComponent 
+interface AppProps {
+  taskListComponent: JSX.Element;
+}
+
+class App extends React.PureComponent<AppProps>
 {
   render() {
     return (
       <div className="App">
-        <TaskList tasks={['Task 1', 'Task 2', 'Task 3']} />
+        { this.props.taskListComponent }
       </div>
     );
   }
